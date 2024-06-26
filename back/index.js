@@ -9,7 +9,7 @@ dotenv.config({ path: "./config/.env" });
 const app = express();
 
 const corsOptions = {
-  origin: "https://contact-ms-client.vercel.app/", // Allow all origins for debugging
+  origin: "https://contact-ms-client.vercel.app", // Allow all origins for debugging
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
