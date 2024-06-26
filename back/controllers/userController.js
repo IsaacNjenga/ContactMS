@@ -1,7 +1,7 @@
 import express from "express";
 import { UserModel } from "../models/User.js";
 import { validationResult } from "express-validator";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config({ path: "../config/.env" });
@@ -44,7 +44,7 @@ const Login = async (req, res) => {
         error: [{ msg: "User not registered!" }],
       });
     }
-    const isPasswordOK = bcrypt.compare(password, userExist.password);
+    const isPasswordOK = await bcrypt.compare(password, userExist.password);
     if (!isPasswordOK) {
       return res.status(400).json({
         error: [{ msg: "Password is incorrect!" }],
