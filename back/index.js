@@ -6,7 +6,13 @@ import { Router } from "./routes/routes.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: `http://localhost:3000` }));
+app.use(
+  cors({
+    origin: [`https://contact-ms-client.vercel.app`],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 dotenv.config({ path: "./config/.env" });
 app.use("/contactMS", Router);
 
