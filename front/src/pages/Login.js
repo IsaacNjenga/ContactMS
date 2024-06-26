@@ -23,7 +23,7 @@ function Login() {
     setErrors(errs);
     if (errs.email === "" && errs.password === "") {
       axios
-        .post("login", values)
+        .post("https://contact-ms-api.vercel.app/contactMS/login", values)
         .then((res) => {
           if (res.data.success) {
             localStorage.setItem("token", res.data.token);

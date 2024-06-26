@@ -16,7 +16,7 @@ import NotFound from "./pages/notFound";
 
 export const UserContext = createContext(null);
 
-axios.defaults.baseURL = "https://contact-ms-api.vercel.app/contactMS/";
+//axios.defaults.baseURL = "https://contact-ms-api.vercel.app/contactMS/";
 axios.defaults.withCredentials = true;
 
 const router = createBrowserRouter([
