@@ -21,7 +21,12 @@ function Register() {
     setErrors(errs);
     if (errs.name === "" && errs.email === "" && errs.password === "") {
       axios
-        .post("https://contact-ms-api.vercel.app/contactMS/register", values)
+        .post("https://contact-ms-api.vercel.app/contactMS/register", values, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          withCredentials: true,
+        })
         .then((res) => {
           if (res.data.success) {
             toast.success("Success!", {
