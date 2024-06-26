@@ -21,7 +21,7 @@ function AddContact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://contact-ms-api.vercel.app/contactMS/addContact", values, {
+      .post("addContact", values, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {

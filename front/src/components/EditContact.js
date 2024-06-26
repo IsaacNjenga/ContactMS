@@ -26,7 +26,7 @@ function EditContact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put("https://contact-ms-api.vercel.app/contactMS/update-contact/" + id, values, {
+      .put("update-contact/" + id, values, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -50,7 +50,7 @@ function EditContact() {
 
   useEffect(() => {
     axios
-      .get("https://contact-ms-api.vercel.app/contactMS/contact/" + id, {
+      .get("contact/" + id, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((response) => {

@@ -21,7 +21,7 @@ function Register() {
     setErrors(errs);
     if (errs.name === "" && errs.email === "" && errs.password === "") {
       axios
-        .post("https://contact-ms-api.vercel.app/contactMS/register", values, {
+        .post("register", values, {
           headers: {
             'Content-Type': 'application/json',
           },

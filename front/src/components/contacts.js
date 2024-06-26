@@ -29,7 +29,7 @@ function Contacts() {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://contact-ms-api.vercel.app/contactMS/contact/${id}`, {
+          .delete(`contact/${id}`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },

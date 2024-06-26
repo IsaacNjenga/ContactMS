@@ -23,7 +23,7 @@ function Login() {
     setErrors(errs);
     if (errs.email === "" && errs.password === "") {
       axios
-        .post("https://contact-ms-api.vercel.app/contactMS/login", values, {
+        .post("login", values, {
           headers: {
             "Content-Type": "application/json",
           },
