@@ -16,7 +16,9 @@ import NotFound from "./pages/notFound";
 
 export const UserContext = createContext(null);
 
-axios.defaults.baseURL = "http://localhost:3001/contactMS/";
+axios.defaults.baseURL = "https://contact-ms-api.vercel.app/contactMS/";
+axios.defaults.withCredentials = true;
+
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/register", element: <Register /> },
